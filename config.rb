@@ -5,13 +5,13 @@ COLUMN_COUNT = 4
 LIGHT_COLOR = 'AAAAAA'
 MEDIUM_COLOR = '888888'
 DARK_COLOR   = '000000'
-OSX_FONT_PATH = "/System/Library/Fonts/Supplemental/Futura.ttc"
+OSX_FONT_PATH = "C:\\Windows\\Fonts\\Candara.ttf"
 FONTS = {
-  'Futura' => {
-    normal: { file: OSX_FONT_PATH, font: 'Futura Medium' },
-    italic: { file: OSX_FONT_PATH, font: 'Futura Medium Italic' },
-    bold: { file: OSX_FONT_PATH, font: 'Futura Condensed ExtraBold' },
-    condensed: { file: OSX_FONT_PATH, font: 'Futura Condensed Medium' },
+  'Candara' => {
+    normal: { file: OSX_FONT_PATH, font: 'Candara' },
+    italic: { file: OSX_FONT_PATH, font: 'Candara Italic' },
+    bold: { file: OSX_FONT_PATH, font: 'Candara Bold' },
+    condensed: { file: OSX_FONT_PATH, font: 'Candara' },
   }
 }
 PAGE_SIZE = 'LETTER' # Could also do 'A4'

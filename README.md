@@ -68,7 +68,9 @@ You can also generate a PDF of some simple lined pages:
 
 ## Limitations
 
-Probably only works on a Mac since it hardcodes the font path.
+The configuration uses the Candara font. On Windows it is usually installed at
+`C:\\Windows\\Fonts\\Candara.ttf`. If the fonts are elsewhere, edit
+`config.rb` to point to the correct location.
 
 ## Thanks
 
