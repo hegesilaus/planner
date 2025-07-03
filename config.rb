@@ -1,17 +1,17 @@
 # Hours shown on the day schedule. You can leave nils if you want a blank to write in.
-HOUR_LABELS = [nil, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, nil, nil]
+HOUR_LABELS = (6..22).to_a
 HOUR_COUNT = HOUR_LABELS.length
 COLUMN_COUNT = 4
 LIGHT_COLOR = 'AAAAAA'
 MEDIUM_COLOR = '888888'
 DARK_COLOR   = '000000'
-OSX_FONT_PATH = "/System/Library/Fonts/Supplemental/Futura.ttc"
+WINDOWS_FONT_DIR = 'C:/Windows/Fonts'
 FONTS = {
-  'Futura' => {
-    normal: { file: OSX_FONT_PATH, font: 'Futura Medium' },
-    italic: { file: OSX_FONT_PATH, font: 'Futura Medium Italic' },
-    bold: { file: OSX_FONT_PATH, font: 'Futura Condensed ExtraBold' },
-    condensed: { file: OSX_FONT_PATH, font: 'Futura Condensed Medium' },
+  'Candara' => {
+    normal:    { file: File.join(WINDOWS_FONT_DIR, 'Candara.ttf') },
+    italic:    { file: File.join(WINDOWS_FONT_DIR, 'Candarai.ttf') },
+    bold:      { file: File.join(WINDOWS_FONT_DIR, 'Candarab.ttf') },
+    condensed: { file: File.join(WINDOWS_FONT_DIR, 'Candara.ttf') },
   }
 }
 PAGE_SIZE = 'LETTER' # Could also do 'A4'
@@ -30,28 +30,4 @@ WINTER_SEMESTER_START = 10 # October
 # Use these if you have sprints of a weekly interval
 SPRINT_EPOCH = Date.parse('2023-01-04')
 SPRINT_LENGTH = 14
-
-# Returns nested array, names by day of week, 0 is Sunday.
-def one_on_ones_for sunday
-  # Weekly
-  sun = []
-  mon = []
-  tue = %w(Randy)
-  wed = %w(Jose Jason)
-  thr = %w(Amulya)
-  fri = []
-  sat = []
-
-  # Biweekly
-  cweek = sunday.cweek
-  wed << 'Jose Luis' if cweek % 2 == 0
-  wed << 'Mamatha'   if cweek % 2 == 1
-
-  # Monthly
-  tue << 'Tyler'     if cweek % 4 == 1
-  wed << 'Guerrero'  if cweek % 4 == 3
-
-  [sun, mon, tue, wed, thr, fri, sat]
-end
-
 
